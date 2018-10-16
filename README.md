@@ -1,2 +1,0 @@
-# Patelco
-#Adding ReadMe again
