@@ -11,6 +11,7 @@ node{
 	
 	stage('SonarQube analysis') {
     		withSonarQubeEnv('Sonar') {
+		def mvnHOME = tool name: 'Maven', type: 'maven'
       		// requires SonarQube Scanner for Maven 3.2+
 		sh "${mvnHome}/bin/mvn sonar:sonar"
       		
@@ -22,11 +23,5 @@ node{
 	
 	stage ('Slack Notification'){
 	}
-	
-  	stage('SCM') {
-    	git 'https://github.com/foo/bar.git'
-  	}
-  	
-
 	
 }
