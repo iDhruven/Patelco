@@ -9,8 +9,9 @@ node{
 		sh "${mvnHOME}/bin/mvn package" 
 	}
 	
-	
 	stage ('Email Notification'){
+	}
 	
+	stage ('Slack Notification'){
 	}
 }
