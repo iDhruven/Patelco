@@ -8,12 +8,12 @@ node{
 
 	stage ('Compile-Package'){
 		//Get Maven Home Path
-		def mvnHOME = tool name: 'Maven', type: 'maven'
+		def mvnHOME = tool name: 'maven-3', type: 'maven'
 		sh "${mvnHOME}/bin/mvn package" 
 	}
 	
 	stage('SonarQube analysis') {
-    		def mvnHOME = tool name: 'Maven', type: 'maven'
+    		def mvnHOME = tool name: 'maven-3', type: 'maven'
 		withSonarQubeEnv('Sonar') {
       		// requires SonarQube Scanner for Maven 3.2+
 		sh "${mvnHome}/bin/mvn sonar:sonar" //Publish the SourceCode to SonarQube
