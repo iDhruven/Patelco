@@ -13,10 +13,10 @@ node{
 	}
 	
 	stage('SonarQube analysis') {
-    		withSonarQubeEnv('Sonar') {
-		def mvnHOME = tool name: 'Maven', type: 'maven'
+    		def mvnHOME = tool name: 'Maven', type: 'maven'
+		withSonarQubeEnv('Sonar') {
       		// requires SonarQube Scanner for Maven 3.2+
-		sh "${mvnHome}/bin/mvn sonar:sonar"
+		sh "${mvnHome}/bin/mvn sonar:sonar" //Publish the SourceCode to SonarQube
       		
    		}
   	}
