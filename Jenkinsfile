@@ -16,8 +16,8 @@ node{
     		def mvnHOME = tool name: 'Maven', type: 'maven'
 		withSonarQubeEnv('Sonar') {
       		// requires SonarQube Scanner for Maven 3.2+
-		sh "echo 'Hello Three'"
 		sh "${mvnHome}/bin/mvn sonar:sonar" //Publish the SourceCode to SonarQube
+		sh "echo 'Hello Four'"
       		
    		}
   	}
