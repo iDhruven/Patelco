@@ -9,9 +9,9 @@ node{
 	stage ('Compile-Package'){
 		//Get Maven Home Path
 		def mvnHOME = tool name: 'Maven', type: 'maven'
-		sh "echo 'Hello'"
+		sh "echo 'Hello One'"
 		sh "${mvnHOME}/bin/mvn package" 
-		sh "echo 'Hello'"
+		sh "echo 'Hello Two'"
 	}
 	
 	stage('SonarQube analysis') {
