@@ -9,15 +9,14 @@ node{
 	stage ('Compile-Package'){
 		//Get Maven Home Path
 		def mvnHOME = tool name: 'Maven', type: 'maven'
-		sh "echo 'Hello One'"
 		sh "${mvnHOME}/bin/mvn package" 
-		sh "echo 'Hello Two'"
 	}
 	
 	stage('SonarQube analysis') {
     		def mvnHOME = tool name: 'Maven', type: 'maven'
 		withSonarQubeEnv('Sonar') {
       		// requires SonarQube Scanner for Maven 3.2+
+		sh "echo 'Hello Three'"
 		sh "${mvnHome}/bin/mvn sonar:sonar" //Publish the SourceCode to SonarQube
       		
    		}
