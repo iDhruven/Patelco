@@ -8,7 +8,7 @@ node{
 
 	stage ('Compile-Package'){
 		//Get Maven Home Path
-		def mvnHOME = tool name: 'Maven', type: 'maven'
+		def mvnHOME = tool name: 'Maven', type: 'Maven'
 		sh "${mvnHOME}/bin/mvn package" 
 		sh "echo 'Hello'"
 	}
